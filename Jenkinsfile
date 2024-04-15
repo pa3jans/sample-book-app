@@ -58,7 +58,8 @@ pipeline {
 // for mac/linux : sh "npm ..."
 def build(){
     echo "Building of node application has started"
-    bat "ls"
+    bat "dir"
+    bat "npm -v"
     bat "npm install"
 }
 
