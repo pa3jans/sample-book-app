@@ -58,13 +58,14 @@ pipeline {
 // for mac/linux : sh "npm ..."
 def build(){
     echo "Building of node application has started"
-    bat "dir"
+    // bat "dir"
     bat "npm -v"
     bat "npm install"
 }
 
 def deploy(String environment, int port){
     echo "Deployment to ${environment} has started"
+    bat "npm install -g pm2"
     bat "pm2 delete ${environment}"
     bat "pm2 start -n \"${environment}\" index.js -- ${port}"
 }
