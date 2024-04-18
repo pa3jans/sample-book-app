@@ -24,14 +24,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build
 
-      # Runs a single command using the runners shell
-      - name: build success
-        run: echo build success
+      # # Runs a single command using the runners shell
+      # - name: build success
+      #   run: echo build success
 
-      - name: check node version
-        run: node -v
+      # - name: check node version
+      #   run: node -v
 
   deploy-dev:
     name: deploy DEV
