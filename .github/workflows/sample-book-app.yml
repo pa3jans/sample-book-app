@@ -25,7 +25,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      - uses: .github/actions/build
+      - uses: ./.github/actions/build
 
       # # Runs a single command using the runners shell
       # - name: build success
