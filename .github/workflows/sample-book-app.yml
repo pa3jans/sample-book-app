@@ -42,10 +42,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
-      # Runs a single command using the runners shell
-      - name: deploy success
-        run: echo deployment to DEV has started
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/deploy
+        with: 
+          port: 2345
+          environment: 'DEV'
+      # # Runs a single command using the runners shell
+      # - name: deploy success
+      #   run: echo deployment to DEV has started
 
   tests-dev:
     name: tests DEV
