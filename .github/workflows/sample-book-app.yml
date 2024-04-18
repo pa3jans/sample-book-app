@@ -19,7 +19,7 @@ jobs:
   build:
     name: Build
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -33,19 +33,7 @@ jobs:
       - name: check node version
         run: node -v
 
-  tests:
-    name: tests
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-
-      # Runs a single command using the runners shell
-      - name: tests success
-        run: echo tests success
-
-  deploy:
+  deploy-dev:
     name: deploy
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -55,4 +43,64 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: deploy success
-        run: echo deploy success
+        run: echo deployment to DEV has started
+
+  tests-dev:
+    name: tests
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a single command using the runners shell
+      - name: tests success
+        run: echo testing on DEV has started
+
+  deploy-stg:
+    name: deploy
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a single command using the runners shell
+      - name: deploy success
+        run: echo deployment to STG has started
+
+  tests-stg:
+    name: tests
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a single command using the runners shell
+      - name: tests success
+        run: echo testing on STG has started
+
+  deploy-prd:
+    name: deploy
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a single command using the runners shell
+      - name: deploy success
+        run: echo deployment to PRD has started
+
+  tests-prd:
+    name: tests
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a single command using the runners shell
+      - name: tests success
+        run: echo testing on PRD has started
