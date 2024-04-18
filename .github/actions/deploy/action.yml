@@ -30,7 +30,7 @@ runs:
     #   shell: bash
 
     - name: Start service
-      run: pm2 start -n ${{ inputs.environment }} index.js -- ${{ port }}
+      run: pm2 start -n ${{ inputs.environment }} index.js -- ${{ inputs.port }}
       shell: bash
 
     - name: Check service
