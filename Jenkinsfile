@@ -65,7 +65,7 @@ def build(){
 
 def deploy(String environment, int port){
     echo "Deployment to ${environment} has started"
-    bat "npm install -g pm2"
+    bat "npm install -g pm2@latest"
     bat "pm2 delete ${environment}"
     bat "pm2 start -n \"${environment}\" index.js -- ${port}"
 }
