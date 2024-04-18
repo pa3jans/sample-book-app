@@ -60,9 +60,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      # Runs a single command using the runners shell
-      - name: tests success
-        run: echo testing on DEV has started
+      # # Runs a single command using the runners shell
+      # - name: tests success
+      #   run: echo testing on DEV has started
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/tests
+        with: 
+          environment: 'DEV'
 
   deploy-stg:
     name: deploy STG
@@ -73,9 +77,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      # Runs a single command using the runners shell
-      - name: deploy success
-        run: echo deployment to STG has started
+      # # Runs a single command using the runners shell
+      # - name: deploy success
+      #   run: echo deployment to STG has started
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/deploy
+        with: 
+          port: 1010
+          environment: 'STG'
 
   tests-stg:
     name: tests STG
@@ -86,9 +95,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      # Runs a single command using the runners shell
-      - name: tests success
-        run: echo testing on STG has started
+      # # Runs a single command using the runners shell
+      # - name: tests success
+      #   run: echo testing on STG has started
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/tests
+        with: 
+          environment: 'DEV'
 
   deploy-prd:
     name: deploy PRD
@@ -99,9 +112,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      # Runs a single command using the runners shell
-      - name: deploy success
-        run: echo deployment to PRD has started
+      # # Runs a single command using the runners shell
+      # - name: deploy success
+      #   run: echo deployment to PRD has started
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/deploy
+        with: 
+          port: 1050
+          environment: 'PRD'
 
   tests-prd:
     name: tests PRD
@@ -112,6 +130,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      # Runs a single command using the runners shell
-      - name: tests success
-        run: echo testing on PRD has started
+      # # Runs a single command using the runners shell
+      # - name: tests success
+      #   run: echo testing on PRD has started
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/tests
+        with: 
+          environment: 'DEV'
