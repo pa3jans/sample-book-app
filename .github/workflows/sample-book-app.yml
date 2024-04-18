@@ -56,11 +56,3 @@ jobs:
       # Runs a single command using the runners shell
       - name: deploy success
         run: echo deploy success
-      
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-
-      # Runs a single command using the runners shell
-      - name: clean up success
-        run: echo clean up success
