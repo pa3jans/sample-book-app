@@ -67,6 +67,10 @@ jobs:
       # - name: tests success
       #   run: echo testing on DEV has started
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: 'pa3jans/api-automation'
+          path: 'api-tests'
       - uses: ./.github/actions/tests
         with: 
           environment: 'DEV'
