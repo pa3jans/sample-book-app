@@ -75,6 +75,18 @@ jobs:
         with: 
           environment: 'BOOKS_DEV'
 
+  clear-dev:
+    name: clear DEV
+    runs-on: self-hosted
+    needs: [tests-dev]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Delete services
+        run: pm2 delete DEV
+        shell: cmd
+
+
   deploy-stg:
     name: deploy STG
     # The type of runner that the job will run on
@@ -110,7 +122,18 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/tests
         with: 
-          environment: 'STG'
+          environment: 'BOOKS_STG'
+  
+  clear-stg:
+    name: clear STG
+    runs-on: self-hosted
+    needs: [tests-stg]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Delete services
+        run: pm2 delete STG
+        shell: cmd
 
   deploy-prd:
     name: deploy PRD
@@ -147,4 +170,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/tests
         with: 
-          environment: 'PRD'
+          environment: 'BOOKS_PRD'
+
+  clear-prd:
+    name: clear PRD
+    runs-on: self-hosted
+    needs: [tests-prd]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Delete services
+        run: pm2 delete PRD
+        shell: cmd
