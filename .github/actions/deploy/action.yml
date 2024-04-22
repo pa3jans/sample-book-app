@@ -15,16 +15,16 @@ runs:
   steps:
     - name: Print output
       run: echo Deployment to ${{ inputs.environment }} has started
-      shell: bash
+      shell: cmd
 
     - name: Install dependencies
       run: npm install
-      shell: bash
+      shell: cmd
 
     - name: Install pm2
       # run: sudo npm install -g pm2
       run: npm install -g pm2
-      shell: bash
+      shell: cmd
       
     # - name: Delete services
     #   run: pm2 delete ${{ inputs.environment }}
@@ -32,8 +32,8 @@ runs:
 
     - name: Start service
       run: pm2 start -n ${{ inputs.environment }} index.js -- ${{ inputs.port }}
-      shell: bash
+      shell: cmd
 
     - name: Check service
       run: pm2 list
-      shell: bash
+      shell: cmd

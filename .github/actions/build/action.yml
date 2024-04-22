@@ -3,7 +3,7 @@ runs:
   steps:
     - name: build success
       run: echo build success
-      shell: bash
+      shell: cmd
     - name: Install dependencies
       run: npm install
-      shell: bash
+      shell: cmd
