@@ -4,6 +4,12 @@ runs:
     - name: build success
       run: echo build success
       shell: cmd
+
     - name: Install dependencies
       run: npm install
+      shell: cmd
+
+    - name: Install pm2
+      # run: sudo npm install -g pm2
+      run: npm install -g pm2
       shell: cmd
