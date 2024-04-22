@@ -20,6 +20,10 @@ runs:
         npm install
         npm run books ${{ inputs.environment }}
       shell: cmd
+    - name: upload report as artifact
+      uses: actions/upload-artifact@v4.3.2
+        name: test-report
+        path: api-tests/mochawesome-report
 
     # - name: Install dependencies and pm2
     #   run: |
