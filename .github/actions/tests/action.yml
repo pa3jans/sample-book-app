@@ -20,6 +20,12 @@ runs:
     #     pm2 start -n ${{ inputs.environment }} index.js
     #   shell: bash
 
+    - name: Install dependencies for jest
+      run: |
+        npm install
+        npm install -g jest
+      shell: cmd
+
     - name: Run test
       run: npm test
       shell: cmd
