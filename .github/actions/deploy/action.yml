@@ -26,9 +26,9 @@ runs:
     #   run: npm install -g pm2
     #   shell: cmd
       
-    - name: Delete services
-      run: pm2 delete ${{ inputs.environment }}
-      shell: cmd
+    # - name: Delete services
+    #   run: pm2 delete ${{ inputs.environment }}
+    #   shell: cmd
 
     - name: Start service
       run: pm2 start -n ${{ inputs.environment }} index.js -- ${{ inputs.port }}
