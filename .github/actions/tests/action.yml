@@ -13,12 +13,12 @@ runs:
       run: echo Testing on ${{ inputs.environment }} has started
       shell: bash
 
-    - name: Install dependencies and pm2
-      run: |
-        npm install
-        sudo npm install -g pm2
-        pm2 start -n ${{ inputs.environment }} index.js
-      shell: bash
+    # - name: Install dependencies and pm2
+    #   run: |
+    #     npm install
+    #     sudo npm install -g pm2
+    #     pm2 start -n ${{ inputs.environment }} index.js
+    #   shell: bash
 
     - name: Run test
       run: npm test

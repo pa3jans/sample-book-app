@@ -22,7 +22,8 @@ runs:
       shell: bash
 
     - name: Install pm2
-      run: sudo npm install -g pm2
+      # run: sudo npm install -g pm2
+      run: npm install -g pm2
       shell: bash
       
     # - name: Delete services
