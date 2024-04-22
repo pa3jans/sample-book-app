@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/deploy
         with: 
-          port: 2345
+          port: 1234 # te jāsakrīt portiem ar to, kas norādīts config
           environment: 'DEV'
       # # Runs a single command using the runners shell
       # - name: deploy success
@@ -73,7 +73,7 @@ jobs:
           path: 'api-tests'
       - uses: ./.github/actions/tests
         with: 
-          environment: 'DEV'
+          environment: 'BOOKS_DEV'
 
   deploy-stg:
     name: deploy STG
@@ -91,7 +91,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/deploy
         with: 
-          port: 1010
+          port: 1235
           environment: 'STG'
 
   tests-stg:
@@ -128,7 +128,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/deploy
         with: 
-          port: 1050
+          port: 1236
           environment: 'PRD'
 
   tests-prd:
