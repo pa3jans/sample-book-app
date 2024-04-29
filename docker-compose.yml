@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  sample-book-app-dev:
+    image: sample-book-app
+    container_name: sample-book-app-dev
+    ports:
+      - 8001:1050
+  sample-book-app-stg:
+      image: sample-book-app
+      container_name: sample-book-app-stg
+      ports:
+        - 8002:1050
+  sample-book-app-prd:
+      image: sample-book-app
+      container_name: sample-book-app-prd
+      ports:
+        - 8003:1050
